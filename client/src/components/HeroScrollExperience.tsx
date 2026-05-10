@@ -102,7 +102,7 @@ export function HeroScrollExperience() {
 
         {/* 3D Robot — centered */}
         <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-          <div className="relative w-[500px] h-[600px] md:w-[550px] md:h-[650px] lg:w-[600px] lg:h-[700px] pointer-events-auto">
+          <div className="relative w-[300px] h-[400px] sm:w-[400px] sm:h-[500px] md:w-[550px] md:h-[650px] lg:w-[600px] lg:h-[700px] pointer-events-auto">
             <div className="absolute inset-0 z-0">
               <Spotlight fill="#D4AF37" />
             </div>
@@ -128,16 +128,16 @@ export function HeroScrollExperience() {
           style={{ opacity: heroOpacity }}
           className="absolute inset-0 z-20 flex items-center pointer-events-none"
         >
-          <div className="container flex items-center justify-between w-full">
+          <div className="container flex flex-col md:flex-row items-center justify-between w-full h-full md:h-auto py-24 md:py-0">
             {/* LEFT — Name */}
             <motion.div
               style={{ pointerEvents: heroPointerEvents }}
-              className="relative z-50 pl-12 md:pl-16 w-[280px] md:w-[320px] lg:w-[360px]"
+              className="relative z-50 w-full md:w-[320px] lg:w-[360px] pl-0 md:pl-16 text-center md:text-left mb-auto md:mb-0"
             >
-              <span className="text-sm md:text-base font-medium text-gold uppercase tracking-widest block mb-4">
+              <span className="text-xs sm:text-sm md:text-base font-medium text-gold uppercase tracking-widest block mb-2 md:mb-4">
                 Hello! I'm
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-display font-bold text-foreground leading-tight tracking-tighter">
+              <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-7xl font-display font-bold text-foreground leading-tight tracking-tighter">
                 EHSAAN
                 <br />
                 <motion.span 
@@ -159,12 +159,12 @@ export function HeroScrollExperience() {
             {/* RIGHT — Role + Buttons */}
             <motion.div
               style={{ pointerEvents: heroPointerEvents }}
-              className="text-right md:pr-12 lg:pr-24 relative z-50 w-[280px] md:w-[320px] lg:w-[360px]"
+              className="relative z-50 w-full md:w-[320px] lg:w-[360px] pr-0 md:pr-12 lg:pr-24 text-center md:text-right mt-auto md:mt-0"
             >
-              <h2 className="text-xl md:text-2xl lg:text-4xl font-display font-bold text-foreground mb-8 tracking-tight whitespace-nowrap">
+              <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-4xl font-display font-bold text-foreground mb-6 md:mb-8 tracking-tight whitespace-normal md:whitespace-nowrap">
                 An <span className="text-gold">AI/ML</span> Engineer
               </h2>
-              <div className="flex flex-col sm:flex-row gap-4 justify-end">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-end">
                 <motion.a
                   href="#work"
                   whileHover={{ 
@@ -201,8 +201,8 @@ export function HeroScrollExperience() {
           className="absolute inset-0 z-20 flex items-center pointer-events-none"
         >
           <div className="container">
-            <motion.div style={{ pointerEvents: aboutPointerEvents }} className="ml-auto max-w-xl">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground mb-4">
+            <motion.div style={{ pointerEvents: aboutPointerEvents }} className="ml-auto w-full md:max-w-xl pt-24 md:pt-0">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground mb-4 text-center md:text-left">
                 About{' '}
                 <motion.span
                   className="text-gold inline-block"
@@ -220,7 +220,7 @@ export function HeroScrollExperience() {
               </h2>
               {/* Animated divider line */}
               <motion.div
-                className="h-px bg-gradient-to-r from-gold/50 to-transparent w-48 mb-8"
+                className="h-px bg-gradient-to-r from-gold/50 to-transparent w-32 md:w-48 mb-6 md:mb-8 mx-auto md:mx-0"
                 initial={{ scaleX: 0, originX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}

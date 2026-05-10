@@ -121,18 +121,55 @@ export function TechStack() {
           </motion.h2>
         </motion.div>
 
-        {/* Inverted Triangle Grid */}
+        {/* Mobile Flex-Wrap Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="flex flex-col items-center gap-5 md:gap-6 max-w-5xl mx-auto"
+          className="flex md:hidden flex-wrap justify-center gap-3 max-w-sm mx-auto"
+        >
+          {technologies.map((tech, i) => {
+            return (
+              <motion.div
+                key={tech.name}
+                variants={itemVariants}
+                whileHover={{ scale: 1.1, y: -5 }}
+                className="group relative"
+              >
+                <a
+                  href={tech.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center justify-center w-16 h-16 rounded-lg bg-card/30 backdrop-blur-sm border border-border/50 hover:border-gold/50 transition-all duration-300"
+                >
+                  <img
+                    src={tech.icon}
+                    alt={tech.name}
+                    className={`w-7 h-7 mb-1 ${tech.name === 'GitHub' || tech.name === 'Flask' || tech.name === 'LangChain' ? 'invert brightness-200' : ''}`}
+                    loading="lazy"
+                  />
+                  <span className="text-[8px] font-medium text-muted-foreground text-center truncate w-full px-1">
+                    {tech.name}
+                  </span>
+                </a>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+
+        {/* Desktop Inverted Triangle Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+          className="hidden md:flex flex-col items-center gap-6 max-w-5xl mx-auto"
         >
           {rows.map((row, rowIndex) => (
             <div
               key={rowIndex}
-              className="flex justify-center gap-4 md:gap-6"
+              className="flex justify-center gap-6"
             >
               {row.map((tech) => {
                 const currentGlobalIndex = globalIndex++;
@@ -163,13 +200,13 @@ export function TechStack() {
                       href={tech.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="relative flex flex-col items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-xl bg-card/30 backdrop-blur-sm border border-border/50 hover:border-gold/50 transition-all duration-300"
+                      className="relative flex flex-col items-center justify-center w-24 h-24 rounded-xl bg-card/30 backdrop-blur-sm border border-border/50 hover:border-gold/50 transition-all duration-300"
                     >
                       {/* Floating animation on icon */}
                       <motion.img
                         src={tech.icon}
                         alt={tech.name}
-                        className={`w-9 h-9 md:w-11 md:h-11 mb-2 transition-transform duration-300 ${
+                        className={`w-11 h-11 mb-2 transition-transform duration-300 ${
                           tech.name === 'GitHub' || tech.name === 'Flask' || tech.name === 'LangChain' ? 'invert brightness-200' : ''
                         }`}
                         animate={{
@@ -183,7 +220,7 @@ export function TechStack() {
                         }}
                         loading="lazy"
                       />
-                      <span className="text-[9px] md:text-[11px] font-medium text-muted-foreground group-hover:text-gold transition-colors duration-300 text-center leading-tight">
+                      <span className="text-[11px] font-medium text-muted-foreground group-hover:text-gold transition-colors duration-300 text-center leading-tight">
                         {tech.name}
                       </span>
                     </a>
