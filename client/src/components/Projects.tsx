@@ -355,7 +355,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
           />
 
-          <div className="bg-card/30 backdrop-blur-sm border border-border rounded-2xl overflow-hidden hover:border-gold/40 transition-all duration-500 h-full flex flex-col shadow-lg shadow-black/10 hover:shadow-gold/5 hover:shadow-2xl">
+          <div className="bento-box overflow-hidden h-full flex flex-col">
             {/* Project Image with parallax */}
             <div className="relative overflow-hidden">
               <motion.img

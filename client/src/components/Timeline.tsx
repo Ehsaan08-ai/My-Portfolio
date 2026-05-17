@@ -172,8 +172,9 @@ export function Timeline() {
                   {/* Content side */}
                   <div className={`flex-1 pl-16 md:pl-0 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
                     <motion.div
-                      whileHover={{ x: index % 2 === 0 ? -5 : 5 }}
+                      whileHover={{ x: index % 2 === 0 ? -5 : 5, scale: 1.02 }}
                       transition={{ duration: 0.3 }}
+                      className="bento-box p-6 text-left"
                     >
                       <h3 className="text-lg md:text-xl font-display font-bold text-foreground mb-1">
                         {event.title}

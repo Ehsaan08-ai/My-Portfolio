@@ -6,6 +6,8 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 
+import { MagneticCursor } from "./components/MagneticCursor";
+import { BackToTop } from "./components/BackToTop";
 
 function Router() {
   return (
@@ -21,6 +23,8 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
+      <MagneticCursor />
+      <BackToTop />
       <ThemeProvider
         defaultTheme="dark"
       >

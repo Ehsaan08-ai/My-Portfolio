@@ -137,7 +137,7 @@ export function HeroScrollExperience() {
               <span className="text-xs sm:text-sm md:text-base font-medium text-gold uppercase tracking-widest block mb-2 md:mb-4">
                 Hello! I'm
               </span>
-              <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-7xl font-display font-bold text-foreground leading-tight tracking-tighter">
+              <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-7xl font-display font-bold text-gradient leading-tight tracking-tighter">
                 EHSAAN
                 <br />
                 <motion.span 
@@ -172,7 +172,7 @@ export function HeroScrollExperience() {
                     boxShadow: '0 0 30px rgba(212, 175, 55, 0.4)',
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className="relative overflow-hidden px-8 py-3 bg-gold text-background font-semibold rounded-lg hover:bg-secondary transition-all duration-300 text-center text-sm group"
+                  className="relative overflow-hidden px-8 py-3 bg-gold text-background font-semibold rounded-lg hover:bg-secondary transition-all duration-300 text-center text-sm group animated-border"
                 >
                   {/* Shimmer sweep */}
                   <motion.div
@@ -229,7 +229,7 @@ export function HeroScrollExperience() {
 
               <div 
                 onMouseMove={handleAboutMouseMove}
-                className="relative group bg-card/10 backdrop-blur-xl border border-gold/10 rounded-2xl p-8 hover:border-gold/30 transition-all duration-700 overflow-hidden"
+                className="relative group bento-box p-8 overflow-hidden"
               >
                 {/* Dynamic Spotlight Glow */}
                 <motion.div
@@ -347,7 +347,7 @@ function SkillCard({ skill, isExpanded, onToggle }: any) {
       {/* Dashed border card with corner brackets and spotlight */}
       <div 
         onMouseMove={handleMouseMove}
-        className="relative border border-dashed border-border/40 rounded-xl p-5 md:p-6 hover:border-gold/30 transition-all duration-500 bg-card/10 backdrop-blur-md overflow-hidden cursor-pointer"
+        className="relative bento-box p-5 md:p-6 overflow-hidden cursor-pointer"
         onClick={onToggle}
       >
         {/* Dynamic Spotlight Glow */}
