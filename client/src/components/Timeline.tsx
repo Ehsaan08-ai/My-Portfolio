@@ -173,6 +173,7 @@ export function Timeline() {
                   <div className={`flex-1 pl-16 md:pl-0 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
                     <motion.div
                       whileHover={{ x: index % 2 === 0 ? -5 : 5, scale: 1.02 }}
+                      whileTap={{ scale: 0.97 }}
                       transition={{ duration: 0.3 }}
                       className="bento-box p-6 text-left"
                     >

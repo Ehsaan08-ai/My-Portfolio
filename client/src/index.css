@@ -129,6 +129,10 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-display font-bold;
   }
+  /* Fluid typography for impactful headlines on all screens */
+  h1 { font-size: clamp(2rem, 6vw, 4.5rem); }
+  h2 { font-size: clamp(1.5rem, 5vw, 3.75rem); }
+  h3 { font-size: clamp(1.125rem, 3vw, 1.75rem); }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -234,7 +238,22 @@
   }
   
   .bento-box:hover {
-    @apply border-primary/30 shadow-[0_8px_32px_rgba(212,175,55,0.15)] -translate-y-1;
+    @apply border-primary/30 shadow-[0_8px_32px_rgba(212,175,55,0.15)];
+  }
+
+  /* Desktop-only lift on hover */
+  @media (min-width: 768px) {
+    .bento-box:hover {
+      @apply -translate-y-1;
+    }
+  }
+
+  /* Mobile touch-first active states */
+  @media (max-width: 767px) {
+    .bento-box:active {
+      @apply scale-[0.97] border-primary/30;
+      transition: transform 0.1s ease;
+    }
   }
 }
 

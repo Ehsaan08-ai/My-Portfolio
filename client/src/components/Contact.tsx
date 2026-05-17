@@ -156,7 +156,7 @@ export function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title={link.name}
-                className="w-12 h-12 flex items-center justify-center bg-card/50 backdrop-blur-md border border-border rounded-lg hover:border-gold hover:bg-gold/10 transition-all duration-300 text-muted-foreground hover:text-gold relative"
+                className="w-14 h-14 md:w-12 md:h-12 flex items-center justify-center bg-card/50 backdrop-blur-md border border-border rounded-lg hover:border-gold hover:bg-gold/10 transition-all duration-300 text-muted-foreground hover:text-gold relative"
               >
                 {/* Pulse ring on hover */}
                 <motion.div
