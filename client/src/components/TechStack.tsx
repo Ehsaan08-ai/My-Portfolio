@@ -10,9 +10,7 @@ interface TechItem {
 /**
  * TechStack Section
  * Inverted triangle layout with devicon SVG icons.
- * GitHub icon uses a light-colored version for dark backgrounds.
- * Row pattern: 7 → 5 → 3 → 2 (inverted triangle)
- * Enhanced with magnetic hover, orbital glow, and staggered wave reveal.
+ * Row pattern: 8 → 6 → 4 → 2 (Symmetric Inverted Triangle)
  */
 export function TechStack() {
   const [hoveredTech, setHoveredTech] = useState<string | null>(null);
@@ -26,23 +24,29 @@ export function TechStack() {
     { name: 'Scikit-Learn', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg', url: 'https://scikit-learn.org' },
     { name: 'PyTorch', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg', url: 'https://pytorch.org' },
     { name: 'LangChain', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/langchain.svg', url: 'https://langchain.com' },
+    
     { name: 'FastAPI', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg', url: 'https://fastapi.tiangolo.com' },
     { name: 'Flask', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg', url: 'https://flask.palletsprojects.com' },
     { name: 'HTML', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
     { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg', url: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
     { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg', url: 'https://mysql.com' },
+    { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg', url: 'https://postgresql.org' },
+    
     { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg', url: 'https://git-scm.com' },
     { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg', url: 'https://github.com' },
     { name: 'Streamlit', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original.svg', url: 'https://streamlit.io' },
     { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg', url: 'https://code.visualstudio.com' },
+    
+    { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg', url: 'https://www.docker.com' },
+    { name: 'AWS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original.svg', url: 'https://aws.amazon.com' },
   ];
 
-  // Inverted triangle rows: 7 - 5 - 3 - 2
+  // Inverted triangle rows: 8 - 6 - 4 - 2 (Exactly 20 items, clean uniform decrement)
   const rows = [
-    technologies.slice(0, 7),   // Row 1: Python, NumPy, Pandas, Matplotlib, Seaborn, Scikit-Learn, PyTorch
-    technologies.slice(7, 12),  // Row 2: LangChain, FastAPI, Flask, HTML, CSS
-    technologies.slice(12, 15), // Row 3: MySQL, Git, GitHub
-    technologies.slice(15, 17), // Row 4: Streamlit, VS Code
+    technologies.slice(0, 8),   // Row 1: 8 items
+    technologies.slice(8, 14),  // Row 2: 6 items
+    technologies.slice(14, 18), // Row 3: 4 items
+    technologies.slice(18, 20), // Row 4: 2 items
   ];
 
   const containerVariants: Variants = {
@@ -66,7 +70,6 @@ export function TechStack() {
     },
   };
 
-  // Calculate a global index for each tech item across all rows
   let globalIndex = 0;
 
   return (
@@ -88,7 +91,7 @@ export function TechStack() {
         className="absolute bottom-20 right-0 w-80 h-80 bg-gold/5 rounded-full blur-3xl pointer-events-none"
       />
 
-      <div className="container relative z-10">
+      <div className="container relative z-10 mx-auto px-4">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -129,7 +132,7 @@ export function TechStack() {
           viewport={{ once: true, margin: '-50px' }}
           className="flex md:hidden flex-wrap justify-center gap-3 max-w-sm mx-auto"
         >
-          {technologies.map((tech, i) => {
+          {technologies.map((tech) => {
             return (
               <motion.div
                 key={tech.name}
@@ -186,7 +189,6 @@ export function TechStack() {
                     onHoverEnd={() => setHoveredTech(null)}
                     className="group relative"
                   >
-                    {/* Glow effect behind hovered item */}
                     <motion.div
                       className="absolute inset-0 rounded-xl bg-gold/10 blur-xl pointer-events-none"
                       animate={{
@@ -202,7 +204,6 @@ export function TechStack() {
                       rel="noopener noreferrer"
                       className="relative flex flex-col items-center justify-center w-24 h-24 rounded-xl bg-card/30 backdrop-blur-sm border border-border/50 hover:border-gold/50 transition-all duration-300"
                     >
-                      {/* Floating animation on icon */}
                       <motion.img
                         src={tech.icon}
                         alt={tech.name}

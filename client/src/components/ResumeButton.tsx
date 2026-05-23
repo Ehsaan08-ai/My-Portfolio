@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 export function ResumeButton() {
   return (
     <motion.a
-      href="https://drive.google.com/file/d/1ulby8lmGgJuCTy5-nXwEIPNLIGDvAq46/view?usp=drive_link"
+      href="https://drive.google.com/file/d/14C8u4My3u5u7E2EfbUH0QFWZBKgw7rWu/view?usp=drive_link"
       target="_blank"
       rel="noopener noreferrer"
       initial={{ opacity: 0, x: 20 }}
