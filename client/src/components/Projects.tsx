@@ -45,8 +45,20 @@ export function Projects() {
 
   const projects: Project[] = [
     {
-      id: 'snapclass',
+      id: 'hiremind',
       number: '01',
+      title: 'HireMind',
+      description:
+        'AI-powered ATS Resume Scorer that optimizes resumes for Applicant Tracking Systems. Features comprehensive scoring across 5 dimensions, semantic skill validation, and privacy-first local AI analysis.',
+      technologies: ['Python', 'Streamlit', 'NLP', 'Sentence Transformers', 'Supabase'],
+      category: 'AI / Full Stack',
+      image: '/hiremind-cover.png',
+      liveUrl: 'https://hire-mind-landing-page-vercel.vercel.app',
+      githubUrl: 'https://github.com/Ehsaan08-ai/HireMind.git',
+    },
+    {
+      id: 'snapclass',
+      number: '02',
       title: 'SnapClass',
       description:
         'AI-powered attendance management system using facial recognition and voice identification. Teachers take attendance in seconds via webcam, while students enjoy a seamless contactless check-in experience.',
@@ -58,7 +70,7 @@ export function Projects() {
     },
     {
       id: 'ai-gym-coach',
-      number: '02',
+      number: '03',
       title: 'Real-Time AI Gym Coach',
       description:
         'A real-time fitness coaching application using MediaPipe pose detection and Groq AI. Tracks exercises, counts reps, and provides live voice-based coaching feedback during workouts.',
@@ -70,7 +82,7 @@ export function Projects() {
     },
     {
       id: 'flappy-bird-rl',
-      number: '05',
+      number: '04',
       title: 'Flappy Bird RL Agent',
       description:
         'A Deep Q-Network (DQN) based Reinforcement Learning agent trained to play Flappy Bird autonomously using reward-based learning.',
@@ -81,7 +93,7 @@ export function Projects() {
     },
     {
       id: 'super-mario-rl',
-      number: '06',
+      number: '05',
       title: 'Super Mario RL Agent',
       description:
         'A Reinforcement Learning agent built with Double DQN architecture to play Super Mario Bros, trained using gymnasium environments.',
@@ -89,28 +101,6 @@ export function Projects() {
       category: 'Reinforcement Learning',
       image: '/mario-rl-cover.png',
       githubUrl: 'https://github.com/Ehsaan08-ai/Super-Mario-Playing-RL-Agent.git',
-    },
-    {
-      id: 'cnn-image-classification',
-      number: '03',
-      title: 'Image Classification CNN',
-      description:
-        'Binary Image Classification system using Convolutional Neural Networks to accurately classify images of Cats and Dogs with high precision.',
-      technologies: ['Python', 'Scikit-learn', 'Pytorch', 'CNN', 'NumPy'],
-      category: 'Deep Learning',
-      image: '/cnn-classification-cover.png',
-      githubUrl: 'https://github.com/Ehsaan08-ai/Image-Classification-Using-CNN.git',
-    },
-    {
-      id: 'handwritten-digit-classification',
-      number: '04',
-      title: 'Digit Classification CNN-RNN',
-      description:
-        'Handwritten Digit Classification system leveraging both CNN and RNN architectures for robust digit recognition on the MNIST dataset.',
-      technologies: ['Python', 'Scikit-learn', 'Pytorch', 'CNN', 'RNN'],
-      category: 'Deep Learning',
-      image: '/digit-classification-cover.png',
-      githubUrl: 'https://github.com/Ehsaan08-ai/HandWritten-Digit-Classification-using-CNN-RNN-.git',
     },
   ];
 
